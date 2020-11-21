@@ -44,6 +44,9 @@ dependencies {
     // for servlets
 //    implementation("io.micronaut.servlet:micronaut-http-server-tomcat:1.0.0.RC2")
     implementation("io.micronaut.servlet:micronaut-http-server-tomcat")
+
+  // for micronaut to spring remoting
+    implementation project(":spring-monolith-api")
 }
 
 
