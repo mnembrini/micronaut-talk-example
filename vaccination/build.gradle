@@ -7,7 +7,6 @@ plugins {
 version = "0.1"
 group = "ch.aaap.talks.micronaut"
 
-apply from: "gradle/asciidoc.gradle"
 repositories {
     mavenCentral()
     jcenter()
@@ -35,6 +34,16 @@ dependencies {
     implementation("io.micronaut.cache:micronaut-cache-caffeine")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
+
+    implementation project(":vaccination-api")
+
+    // spring remoting
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-web:${springVersion}"
+
+    // for servlets
+//    implementation("io.micronaut.servlet:micronaut-http-server-tomcat:1.0.0.RC2")
+    implementation("io.micronaut.servlet:micronaut-http-server-tomcat")
 }
 
 

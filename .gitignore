@@ -1,2 +1,5 @@
 # Project exclude paths
 /.gradle/
+/.idea/
+/spring-monolith-api/build/
+/vaccination-api/build/

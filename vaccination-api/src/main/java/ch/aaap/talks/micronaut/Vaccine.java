@@ -6,6 +6,12 @@ import java.util.StringJoiner;
 
 public class Vaccine implements Serializable {
 
+    public Vaccine(String name, PetType type, long daysSinceBirth) {
+        this.name = name;
+        this.type = type;
+        this.daysSinceBirth = daysSinceBirth;
+    }
+
     private String name;
     private PetType type;
     private long daysSinceBirth;
