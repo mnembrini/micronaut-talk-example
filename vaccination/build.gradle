@@ -40,18 +40,20 @@ dependencies {
     // spring remoting
     implementation "org.springframework:spring-context:${springVersion}"
     implementation "org.springframework:spring-web:${springVersion}"
+    // for micronaut to spring remoting
+    implementation project(":spring-monolith-api")
 
     // for servlets
-//    implementation("io.micronaut.servlet:micronaut-http-server-tomcat:1.0.0.RC2")
     implementation("io.micronaut.servlet:micronaut-http-server-tomcat")
 
-  // for micronaut to spring remoting
-    implementation project(":spring-monolith-api")
+    // for micronaut to micronaut communication
+    implementation project(":inventory-api")
+
 }
 
 
 application {
-    mainClass.set("ch.aaap.talks.micronaut.Application")
+    mainClass.set("ch.aaap.talks.micronaut.VaccinationApplication")
 }
 
 java {

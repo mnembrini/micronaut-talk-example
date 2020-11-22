@@ -3,4 +3,6 @@ include 'vaccination-api'
 include 'vaccination'
 include 'spring-monolith'
 include 'spring-monolith-api'
+include 'inventory'
+include 'inventory-api'
 

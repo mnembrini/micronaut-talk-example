@@ -18,9 +18,9 @@ dependencies {
 
   // remoting to micronaut
   implementation project(":vaccination-api")
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 
   // remoting from micronaut
+	implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation project(":spring-monolith-api")
 }
 

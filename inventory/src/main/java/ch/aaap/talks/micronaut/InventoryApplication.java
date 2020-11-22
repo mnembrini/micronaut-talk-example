@@ -2,11 +2,9 @@ package ch.aaap.talks.micronaut;
 
 import io.micronaut.runtime.Micronaut;
 
-public class Application {
+public class InventoryApplication {
 
     public static void main(String[] args) {
-        Micronaut.run(Application.class, args);
+        Micronaut.run(InventoryApplication.class, args);
     }
-    
-
 }

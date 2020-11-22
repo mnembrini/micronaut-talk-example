@@ -14,7 +14,7 @@ public class RemotingOutbound {
     private String languageServiceRemotingBase;
 
     @Bean
-    public LanguageService createVaccinationServiceInvoker() {
+    public LanguageService createLanguageServiceInvoker() {
         HttpInvokerProxyFactoryBean invoker = new HttpInvokerProxyFactoryBean();
         invoker.setHttpInvokerRequestExecutor(new SimpleHttpInvokerRequestExecutor());
         invoker.setServiceUrl(languageServiceRemotingBase + LanguageService.URI);

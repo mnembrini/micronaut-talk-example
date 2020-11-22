@@ -23,7 +23,9 @@ public class RemotingController {
     }
 
     @Post(value = VaccinationService.URI, processes = MediaType.ALL)
-    void handleRemotingCallVaccinationService(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    void handleRemotingCallVaccinationService(HttpServletRequest request,
+                                              HttpServletResponse response)
+            throws IOException, ServletException {
         HttpInvokerServiceExporter httpInvokerServiceExporter = new HttpInvokerServiceExporter();
         httpInvokerServiceExporter.setService(vaccinationService);
         httpInvokerServiceExporter.setServiceInterface(VaccinationService.class);

@@ -1,0 +1,5 @@
+###
+POST http://localhost:8082/inventory
+Content-Type: application/json
+
+[2020,11,23]

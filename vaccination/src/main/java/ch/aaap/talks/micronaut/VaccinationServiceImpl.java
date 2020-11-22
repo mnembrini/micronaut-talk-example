@@ -1,5 +1,7 @@
 package ch.aaap.talks.micronaut;
 
+import ch.aaap.talks.micronaut.client.InventoryClient;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -13,9 +15,11 @@ public class VaccinationServiceImpl implements VaccinationService {
     private static final Logger log = LoggerFactory.getLogger(VaccinationServiceImpl.class);
 
     private final LanguageService languageService;
+    private final InventoryClient inventoryClient;
 
-    public VaccinationServiceImpl(LanguageService languageService) {
+    public VaccinationServiceImpl(LanguageService languageService, InventoryClient inventoryClient) {
         this.languageService = languageService;
+        this.inventoryClient = inventoryClient;
     }
 
     @Override
@@ -25,6 +29,9 @@ public class VaccinationServiceImpl implements VaccinationService {
         log.info("Loading current language");
         Locale currentLanguage = languageService.getCurrentLanguage();
         log.info("Current language is {}", currentLanguage);
+
+        int availableStorage = inventoryClient.getAvailableStorage(LocalDate.now());
+        log.info("Current available storage is {}", availableStorage);
 
         Vaccine catVaccine = new Vaccine("cat vaccine", PetType.CAT, 60);
         Vaccine earlyCatVaccine = new Vaccine("early cat vaccine", PetType.CAT, 10);
